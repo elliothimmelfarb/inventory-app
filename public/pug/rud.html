@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <div class="container-fluid">
+    <div class="filterArea"></div>
+    <div class="itemsArea container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th class='text-center'>Description</th>
+            <th class='text-center'>Value</th>
+            <th class='text-center'>Location</th>
+            <th class='text-center'><button ng-click='editMode = !editMode' class="btn btn-warning">Modify</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='item in items track by $index'>
+            <td>{{item.name}}</td>
+            <td>{{item.value | currency}}</td>
+            <td>{{item.room}}</td>
+            <td>
+              <button data-id='{{item.id}}' ng-click='editItem($event)' ng-show='editMode' class="btn btn-warning">Edit</button>
+              <button data-id='{{item.id}}' ng-click='deleteItem($event)' ng-show='editMode' class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ const Item = require('../models/item');
 router.get('/', (req, res) => {
   Item.getAll()
   .then(items => {
+    console.log(items)
     res.send(items);
   })
   .catch(err => {

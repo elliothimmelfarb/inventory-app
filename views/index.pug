@@ -8,11 +8,18 @@ head
   link(rel="stylesheet", href="/css/style.css")
   
   script(src="/bower_components/angular/angular.js", charset="utf-8")
+  script(src="/bower_components/angular-ui-router/release/angular-ui-router.js", charset="utf-8")
   
   script(src="/js/module.js")
   script(src="/js/controllers.js")
   script(src="/js/services.js")
   
-body(ng-app='myApp')
-  h1 #{title}
-  
+body(ng-app='myApp' ng-controller='mainController')
+  .container-fluid
+    h1 #{title}
+    div.btn-group
+      button.btn.btn-group.btn-default(ui-sref='create') Add New Items
+      button.btn.btn-group.btn-default(ui-sref='rUD') View, Update, and Delete Items
+    div
+      ui-view
+    
